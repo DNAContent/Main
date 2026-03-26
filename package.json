@@ -1,0 +1,18 @@
+{
+  "name": "zapier-facebook-pipedrive-integration",
+  "version": "1.0.0",
+  "description": "Zapier integration: Facebook Lead Ads → Pipedrive Sequence",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testPathPattern=test/"
+  },
+  "dependencies": {
+    "zapier-platform-core": "15.5.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
