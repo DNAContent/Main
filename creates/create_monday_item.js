@@ -40,7 +40,7 @@ const createMondayItem = async (z, bundle) => {
 
   if (statusLabel) {
     // Real column ID for Task Status on Nicky's Task Board (18406873751)
-    columnValues['color_mm20tj9'] = { label: statusLabel };
+    columnValues['color_mm20e4gj'] = { label: statusLabel };
   }
 
   // Cross-board sync metadata — written when item is mirrored from another board

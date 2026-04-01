@@ -54,7 +54,7 @@ const getMondayCompletedTasks = async (z, bundle) => {
     sourceItemIdColumnId,
   } = bundle.inputData;
 
-  const targetStatusColId = statusColumnId || 'color_mm20tj9';
+  const targetStatusColId = statusColumnId || 'color_mm20e4gj';
   const targetDoneLabel = (doneLabel || 'Done').toLowerCase();
   const sourceBoardCol = sourceBoardIdColumnId || 'text_mm20pkn1';
   const sourceItemCol = sourceItemIdColumnId || 'text_mm20q5v5';
@@ -147,7 +147,7 @@ module.exports = {
         label: 'Status Column ID',
         type: 'string',
         required: false,
-        default: 'color_mm20tj9',
+        default: 'color_mm20e4gj',
         helpText:
           'Column ID of the Task Status column on the task board. Pre-filled: color_mm20tj9.',
       },
