@@ -155,8 +155,9 @@ module.exports = {
         label: 'Slack Channel ID',
         type: 'string',
         required: true,
+        default: 'C0AQA7L8YKY',
         helpText:
-          'The ID of the Slack channel to monitor (e.g., C01234ABCD). Right-click the channel in Slack → "Copy link" — the ID is the last path segment of the URL.',
+          'The Slack channel to monitor. Pre-filled with #nicky-tasks (C0AQA7L8YKY).',
       },
     ],
     perform: getSlackMessages,
