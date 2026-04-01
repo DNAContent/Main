@@ -47,7 +47,9 @@ const authentication = {
 };
 
 const includeBearerToken = (request, z, bundle) => {
-  if (bundle.authData.access_token) {
+  // Only inject the Pipedrive OAuth token when no other Authorization header
+  // has already been set by the individual action (e.g., Monday.com or Slack).
+  if (bundle.authData.access_token && !request.headers.Authorization) {
     request.headers.Authorization = `Bearer ${bundle.authData.access_token}`;
   }
   return request;
