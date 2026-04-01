@@ -104,8 +104,9 @@ module.exports = {
         label: 'Source Board ID',
         type: 'string',
         required: true,
+        default: '1738214277',
         helpText:
-          'The numeric ID of the source board containing the item to update (e.g., Distribution Studio). Map the "source_board_id" field from the task-completed trigger.',
+          'The source board to update. Distribution Department = 1738214277. Map "source_board_id" from the task-completed trigger.',
       },
       {
         key: 'itemId',
@@ -113,16 +114,16 @@ module.exports = {
         type: 'string',
         required: true,
         helpText:
-          'The numeric ID of the item on the source board to update. Map the "source_item_id" field from the task-completed trigger.',
+          'Map the "source_item_id" field from the task-completed trigger.',
       },
       {
         key: 'columnId',
         label: 'Column ID to Update',
         type: 'string',
         required: true,
-        default: 'ad_distribution',
+        default: 'dup__of_content_distribution_stsatus',
         helpText:
-          'The ID of the column to update on the source board (e.g., the "Ad Distribution" status column). Find column IDs via the Monday.com API playground or by opening the column settings.',
+          'Column to update on the source board. Ad Distribution Status on Distribution Department = dup__of_content_distribution_stsatus.',
       },
       {
         key: 'statusLabel',

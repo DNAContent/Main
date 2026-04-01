@@ -54,10 +54,10 @@ const getMondayCompletedTasks = async (z, bundle) => {
     sourceItemIdColumnId,
   } = bundle.inputData;
 
-  const targetStatusColId = statusColumnId || 'status';
+  const targetStatusColId = statusColumnId || 'color_mm20tj9';
   const targetDoneLabel = (doneLabel || 'Done').toLowerCase();
-  const sourceBoardCol = sourceBoardIdColumnId || 'text';
-  const sourceItemCol = sourceItemIdColumnId || 'text0';
+  const sourceBoardCol = sourceBoardIdColumnId || 'text_mm20pkn1';
+  const sourceItemCol = sourceItemIdColumnId || 'text_mm20q5v5';
 
   const response = await z.request({
     url: MONDAY_API,
@@ -138,17 +138,18 @@ module.exports = {
         label: "Nicky's Task Board ID",
         type: 'string',
         required: true,
+        default: '18406873751',
         helpText:
-          "The numeric ID of Nicky's personal task board. Find it in the board URL: monday.com/boards/XXXXXXXXXX.",
+          "Nicky's Monday.com task board. Pre-filled: 18406873751.",
       },
       {
         key: 'statusColumnId',
         label: 'Status Column ID',
         type: 'string',
         required: false,
-        default: 'status',
+        default: 'color_mm20tj9',
         helpText:
-          'The column ID of the Status column on the task board. Defaults to "status".',
+          'Column ID of the Task Status column on the task board. Pre-filled: color_mm20tj9.',
       },
       {
         key: 'doneLabel',
@@ -164,18 +165,18 @@ module.exports = {
         label: 'Source Board ID Column ID',
         type: 'string',
         required: false,
-        default: 'text',
+        default: 'text_mm20pkn1',
         helpText:
-          'The column ID on the task board that stores the source board ID. This is set automatically when items are mirrored from another board. Defaults to "text".',
+          'Column ID that stores the source board ID (for sync-back). Pre-filled: text_mm20pkn1.',
       },
       {
         key: 'sourceItemIdColumnId',
         label: 'Source Item ID Column ID',
         type: 'string',
         required: false,
-        default: 'text0',
+        default: 'text_mm20q5v5',
         helpText:
-          'The column ID on the task board that stores the source item ID. Defaults to "text0".',
+          'Column ID that stores the source item ID (for sync-back). Pre-filled: text_mm20q5v5.',
       },
     ],
     perform: getMondayCompletedTasks,

@@ -39,19 +39,19 @@ const createMondayItem = async (z, bundle) => {
   const columnValues = {};
 
   if (statusLabel) {
-    columnValues['status'] = { label: statusLabel };
+    // Real column ID for Task Status on Nicky's Task Board (18406873751)
+    columnValues['color_mm20tj9'] = { label: statusLabel };
   }
 
   // Cross-board sync metadata — written when item is mirrored from another board
-  if (sourceBoardId) columnValues['text'] = sourceBoardId;
-  if (sourceItemId) columnValues['text0'] = sourceItemId;
-  if (sourceBoardName) columnValues['text1'] = sourceBoardName;
+  // Real column IDs on Nicky's Task Board (18406873751):
+  //   text_mm20pkn1 = Source Board ID
+  //   text_mm20q5v5 = Source Item ID
+  if (sourceBoardId) columnValues['text_mm20pkn1'] = sourceBoardId;
+  if (sourceItemId) columnValues['text_mm20q5v5'] = sourceItemId;
 
   // Slack source metadata — written when item comes from a Slack message
-  if (slackChannelId) columnValues['text2'] = slackChannelId;
-  if (slackMessageTs) columnValues['text3'] = slackMessageTs;
-
-  if (notes) columnValues['long_text'] = { text: notes };
+  if (notes) columnValues['long_text_mm20ze2r'] = { text: notes };
 
   const mutation = {
     query: `
@@ -141,8 +141,9 @@ module.exports = {
         label: "Target Board ID (Nicky's Task Board)",
         type: 'string',
         required: true,
+        default: '18406873751',
         helpText:
-          "The numeric ID of Nicky's Monday.com task board. Find it in the board URL: monday.com/boards/XXXXXXXXXX.",
+          "Nicky's Monday.com task board ID. Pre-filled: 18406873751.",
       },
       {
         key: 'groupId',
@@ -150,7 +151,7 @@ module.exports = {
         type: 'string',
         required: false,
         helpText:
-          'The ID of the group (section) within the board to add the item to. Leave blank to use the top group.',
+          'Group to drop the item into. New Tasks = top group (leave blank). In Progress = group_mm205qpz. Done = group_mm20e9p0.',
       },
       {
         key: 'itemName',
@@ -192,22 +193,6 @@ module.exports = {
         required: false,
         helpText:
           'Human-readable name of the source board (e.g., "Distribution Studio"). Stored for display purposes.',
-      },
-      {
-        key: 'slackChannelId',
-        label: 'Slack Channel ID',
-        type: 'string',
-        required: false,
-        helpText:
-          'If this task came from a Slack message, map the "channel_id" field from the Slack trigger here.',
-      },
-      {
-        key: 'slackMessageTs',
-        label: 'Slack Message Timestamp',
-        type: 'string',
-        required: false,
-        helpText:
-          'If this task came from a Slack message, map the "ts" field from the Slack trigger here.',
       },
       {
         key: 'notes',
