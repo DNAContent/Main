@@ -80,7 +80,7 @@ module.exports = {
     label: 'New Lead from Facebook Lead Ads',
     description:
       'Triggers when a new lead is submitted through a Facebook Lead Ad form.',
-    important: true,
+
   },
 
   operation: {

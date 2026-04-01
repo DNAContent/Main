@@ -119,7 +119,7 @@ module.exports = {
     label: "Task Marked Done on Nicky's Monday.com Task Board",
     description:
       "Triggers when Nicky marks a task as Done on his personal Monday.com task board. Only fires for tasks that were mirrored from another board (e.g., Distribution Studio), so the completion can be synced back to the source board.",
-    important: true,
+
   },
 
   operation: {

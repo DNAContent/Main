@@ -71,7 +71,7 @@ module.exports = {
     label: 'Add Person to Pipedrive Sequence',
     description:
       'Subscribes a Pipedrive Person to a specific email sequence (campaign). Requires the Pipedrive Campaigns add-on.',
-    important: true,
+
   },
 
   operation: {

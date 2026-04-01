@@ -118,7 +118,7 @@ module.exports = {
     label: "New Item Assigned to Nicky on Monday.com Board",
     description:
       "Triggers when an active item is assigned to Nicky on a source Monday.com board (e.g., Distribution Studio). Used to mirror the item onto his personal task board for a unified view.",
-    important: true,
+
   },
 
   operation: {

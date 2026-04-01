@@ -136,7 +136,7 @@ module.exports = {
     label: 'New Task-Like Message in Slack Channel',
     description:
       'Triggers when a new message posted to a Slack channel sounds like a task or assignment (e.g., "Can you…", "Please…", "Need to…"). Used to auto-create items on a Monday.com task board.',
-    important: true,
+
   },
 
   operation: {
