@@ -1,7 +1,7 @@
 {
-  "name": "zapier-facebook-pipedrive-integration",
-  "version": "1.0.0",
-  "description": "Zapier integration: Facebook Lead Ads → Pipedrive Sequence",
+  "name": "dna-content-zapier-integrations",
+  "version": "1.1.0",
+  "description": "Zapier integrations: Facebook Lead Ads → Pipedrive | Slack + Monday.com → Nicky's Task Board",
   "main": "index.js",
   "scripts": {
     "test": "jest --testPathPattern=test/"
