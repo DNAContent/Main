@@ -48,3 +48,36 @@ test/index.test.js                    — Jest unit tests
 - API base URLs defined as constants at top of each file
 - Error handling uses `z.errors.Error` and `z.errors.RefreshAuthError`
 - Tests use sample data fallbacks when APIs are unreachable
+
+---
+
+## New Account / Machine Setup
+
+### Switching accounts on the same Mac
+
+1. Log out of Claude Code (`/logout` or via settings)
+2. Log in with the new account
+3. Navigate to the project: `cd "/Users/admin/Strategy Agent"`
+4. The new account will read this `CLAUDE.md` automatically — it picks up the project config on first open
+5. Copy the memory files so the new account has full context:
+   ```bash
+   cp -r ~/.claude/projects/-Users-admin-Strategy-Agent/memory/ \
+     ~/.claude/projects/-Users-admin-Strategy-Agent-NEW-ACCOUNT/memory/
+   ```
+   *(The destination folder name will match the new account's hash — Claude creates it on first launch)*
+
+### Moving to a different machine
+
+Three things to copy:
+
+| What | From | To |
+|------|------|----|
+| Project folder | `/Users/admin/Strategy Agent/` | Same path on new machine |
+| Presentation | `/Users/admin/Desktop/AtomBeam Strategy/` | Same path on new machine |
+| Memory files | `~/.claude/projects/-Users-admin-Strategy-Agent/memory/` | Equivalent path on new machine |
+
+### Fastest option — start fresh on the new account
+
+The memory files at `~/.claude/projects/-Users-admin-Strategy-Agent/memory/` contain everything Claude references. Paste the contents of `MEMORY.md` and `project_atombeam_presentation.md` into your **first message** on the new account and it will have full context immediately.
+
+> The HTML presentation file is completely self-contained — no server, no dependencies, opens in any browser on any machine.
